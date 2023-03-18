@@ -30,6 +30,16 @@ namespace P520231_JEANCAV.Formularios
         private void gesrtionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            //control para que el formulario de gestión de usuarios se muestre
+            //solo una vez
+
+            if (!Globales.MiFormGestionUsuarios.Visible)
+            {
+                Globales.MiFormGestionUsuarios = new FrmUsuariosGestion();
+
+                Globales.MiFormGestionUsuarios.Show();
+            }
+
         }
     }
 }

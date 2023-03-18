@@ -46,7 +46,7 @@
             this.label1.BackColor = System.Drawing.Color.Gray;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(186, 368);
+            this.label1.Location = new System.Drawing.Point(191, 347);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 25);
@@ -58,7 +58,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Gray;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(230, 523);
+            this.label2.Location = new System.Drawing.Point(239, 488);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 25);
@@ -67,16 +67,16 @@
             // 
             // TxtEmail
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(76, 432);
-            this.TxtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtEmail.Location = new System.Drawing.Point(76, 396);
+            this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(491, 30);
             this.TxtEmail.TabIndex = 2;
             // 
             // TxtContrasennia
             // 
-            this.TxtContrasennia.Location = new System.Drawing.Point(76, 586);
-            this.TxtContrasennia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtContrasennia.Location = new System.Drawing.Point(76, 551);
+            this.TxtContrasennia.Margin = new System.Windows.Forms.Padding(4);
             this.TxtContrasennia.Name = "TxtContrasennia";
             this.TxtContrasennia.Size = new System.Drawing.Size(418, 30);
             this.TxtContrasennia.TabIndex = 3;
@@ -87,8 +87,8 @@
             this.BtnIngresar.BackColor = System.Drawing.Color.Green;
             this.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIngresar.ForeColor = System.Drawing.Color.White;
-            this.BtnIngresar.Location = new System.Drawing.Point(113, 696);
-            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIngresar.Location = new System.Drawing.Point(116, 653);
+            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(140, 46);
             this.BtnIngresar.TabIndex = 5;
@@ -101,8 +101,8 @@
             this.BtnCancelar.BackColor = System.Drawing.Color.DarkRed;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelar.Location = new System.Drawing.Point(363, 696);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Location = new System.Drawing.Point(363, 653);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(140, 46);
             this.BtnCancelar.TabIndex = 6;
@@ -113,7 +113,7 @@
             // LblRecuperarContrasennia
             // 
             this.LblRecuperarContrasennia.AutoSize = true;
-            this.LblRecuperarContrasennia.Location = new System.Drawing.Point(358, 620);
+            this.LblRecuperarContrasennia.Location = new System.Drawing.Point(358, 585);
             this.LblRecuperarContrasennia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblRecuperarContrasennia.Name = "LblRecuperarContrasennia";
             this.LblRecuperarContrasennia.Size = new System.Drawing.Size(209, 25);
@@ -125,7 +125,7 @@
             // 
             this.BtnVerContrasennia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVerContrasennia.ForeColor = System.Drawing.Color.White;
-            this.BtnVerContrasennia.Location = new System.Drawing.Point(501, 586);
+            this.BtnVerContrasennia.Location = new System.Drawing.Point(501, 551);
             this.BtnVerContrasennia.Name = "BtnVerContrasennia";
             this.BtnVerContrasennia.Size = new System.Drawing.Size(66, 30);
             this.BtnVerContrasennia.TabIndex = 8;
@@ -140,7 +140,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(126, 42);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 268);
+            this.pictureBox1.Size = new System.Drawing.Size(416, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(655, 816);
+            this.ClientSize = new System.Drawing.Size(655, 724);
             this.Controls.Add(this.BtnVerContrasennia);
             this.Controls.Add(this.LblRecuperarContrasennia);
             this.Controls.Add(this.BtnCancelar);
@@ -162,7 +162,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";

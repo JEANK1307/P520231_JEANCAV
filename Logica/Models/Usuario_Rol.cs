@@ -36,8 +36,9 @@ namespace Logica.Models
             DataTable R = new DataTable();
 
 
-                //aqui va la programacion indicada en el diagrama de
-                //secuencias.
+            Services.Conexion MiCnn = new Services.Conexion();
+
+            R = MiCnn.EjecutarSELECT("SPUsuarioRolListar");
                 
                 return R;
         }
