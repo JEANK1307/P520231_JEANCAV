@@ -293,6 +293,7 @@
             this.BtnAgregar.TabIndex = 5;
             this.BtnAgregar.Text = "AGREGAR";
             this.BtnAgregar.UseVisualStyleBackColor = false;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnModificar
             // 
@@ -328,6 +329,7 @@
             this.BtnLimpiar.TabIndex = 8;
             this.BtnLimpiar.Text = "LIMPIAR";
             this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // BtnCancelar
             // 
