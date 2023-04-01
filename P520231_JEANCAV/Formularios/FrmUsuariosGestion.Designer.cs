@@ -32,6 +32,12 @@
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.CboxVerActivos = new System.Windows.Forms.CheckBox();
             this.DgLista = new System.Windows.Forms.DataGridView();
+            this.CUsuarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUsuarioRolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtUsuarioDireccion = new System.Windows.Forms.TextBox();
             this.CbRolesUsuario = new System.Windows.Forms.ComboBox();
@@ -54,12 +60,6 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
-            this.CUsuarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUsuarioNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUsuarioCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUsuarioCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUsuarioTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUsuarioRolDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +121,57 @@
             this.DgLista.VirtualMode = true;
             this.DgLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellClick);
             this.DgLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgLista_DataBindingComplete);
+            // 
+            // CUsuarioID
+            // 
+            this.CUsuarioID.DataPropertyName = "UsuarioID";
+            this.CUsuarioID.HeaderText = "Cód. Usuario";
+            this.CUsuarioID.Name = "CUsuarioID";
+            this.CUsuarioID.ReadOnly = true;
+            // 
+            // CUsuarioNombre
+            // 
+            this.CUsuarioNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CUsuarioNombre.DataPropertyName = "UsuarioNombre";
+            this.CUsuarioNombre.HeaderText = "Nombre";
+            this.CUsuarioNombre.Name = "CUsuarioNombre";
+            this.CUsuarioNombre.ReadOnly = true;
+            // 
+            // CUsuarioCedula
+            // 
+            this.CUsuarioCedula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioCedula.DataPropertyName = "UsuarioCedula";
+            this.CUsuarioCedula.HeaderText = "Cédula";
+            this.CUsuarioCedula.Name = "CUsuarioCedula";
+            this.CUsuarioCedula.ReadOnly = true;
+            this.CUsuarioCedula.Width = 120;
+            // 
+            // CUsuarioCorreo
+            // 
+            this.CUsuarioCorreo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioCorreo.DataPropertyName = "UsuarioCorreo";
+            this.CUsuarioCorreo.HeaderText = "Correo";
+            this.CUsuarioCorreo.Name = "CUsuarioCorreo";
+            this.CUsuarioCorreo.ReadOnly = true;
+            this.CUsuarioCorreo.Width = 180;
+            // 
+            // CUsuarioTelefono
+            // 
+            this.CUsuarioTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioTelefono.DataPropertyName = "UsuarioTelefono";
+            this.CUsuarioTelefono.HeaderText = "Teléfono";
+            this.CUsuarioTelefono.Name = "CUsuarioTelefono";
+            this.CUsuarioTelefono.ReadOnly = true;
+            this.CUsuarioTelefono.Width = 120;
+            // 
+            // CUsuarioRolDescripcion
+            // 
+            this.CUsuarioRolDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CUsuarioRolDescripcion.DataPropertyName = "UsuarioRolDescripcion";
+            this.CUsuarioRolDescripcion.HeaderText = "Rol";
+            this.CUsuarioRolDescripcion.Name = "CUsuarioRolDescripcion";
+            this.CUsuarioRolDescripcion.ReadOnly = true;
+            this.CUsuarioRolDescripcion.Width = 130;
             // 
             // groupBox1
             // 
@@ -305,6 +356,7 @@
             this.BtnModificar.TabIndex = 6;
             this.BtnModificar.Text = "MODIFICAR";
             this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnEliminar
             // 
@@ -317,6 +369,7 @@
             this.BtnEliminar.TabIndex = 7;
             this.BtnEliminar.Text = "ELIMINAR";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnLimpiar
             // 
@@ -341,57 +394,6 @@
             this.BtnCancelar.TabIndex = 9;
             this.BtnCancelar.Text = "CANCELAR";
             this.BtnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // CUsuarioID
-            // 
-            this.CUsuarioID.DataPropertyName = "UsuarioID";
-            this.CUsuarioID.HeaderText = "Cód. Usuario";
-            this.CUsuarioID.Name = "CUsuarioID";
-            this.CUsuarioID.ReadOnly = true;
-            // 
-            // CUsuarioNombre
-            // 
-            this.CUsuarioNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CUsuarioNombre.DataPropertyName = "UsuarioNombre";
-            this.CUsuarioNombre.HeaderText = "Nombre";
-            this.CUsuarioNombre.Name = "CUsuarioNombre";
-            this.CUsuarioNombre.ReadOnly = true;
-            // 
-            // CUsuarioCedula
-            // 
-            this.CUsuarioCedula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CUsuarioCedula.DataPropertyName = "UsuarioCedula";
-            this.CUsuarioCedula.HeaderText = "Cédula";
-            this.CUsuarioCedula.Name = "CUsuarioCedula";
-            this.CUsuarioCedula.ReadOnly = true;
-            this.CUsuarioCedula.Width = 120;
-            // 
-            // CUsuarioCorreo
-            // 
-            this.CUsuarioCorreo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CUsuarioCorreo.DataPropertyName = "UsuarioCorreo";
-            this.CUsuarioCorreo.HeaderText = "Correo";
-            this.CUsuarioCorreo.Name = "CUsuarioCorreo";
-            this.CUsuarioCorreo.ReadOnly = true;
-            this.CUsuarioCorreo.Width = 180;
-            // 
-            // CUsuarioTelefono
-            // 
-            this.CUsuarioTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CUsuarioTelefono.DataPropertyName = "UsuarioTelefono";
-            this.CUsuarioTelefono.HeaderText = "Teléfono";
-            this.CUsuarioTelefono.Name = "CUsuarioTelefono";
-            this.CUsuarioTelefono.ReadOnly = true;
-            this.CUsuarioTelefono.Width = 120;
-            // 
-            // CUsuarioRolDescripcion
-            // 
-            this.CUsuarioRolDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CUsuarioRolDescripcion.DataPropertyName = "UsuarioRolDescripcion";
-            this.CUsuarioRolDescripcion.HeaderText = "Rol";
-            this.CUsuarioRolDescripcion.Name = "CUsuarioRolDescripcion";
-            this.CUsuarioRolDescripcion.ReadOnly = true;
-            this.CUsuarioRolDescripcion.Width = 130;
             // 
             // FrmUsuariosGestion
             // 
