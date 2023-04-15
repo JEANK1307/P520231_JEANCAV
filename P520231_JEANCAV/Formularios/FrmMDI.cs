@@ -41,5 +41,42 @@ namespace P520231_JEANCAV.Formularios
             }
 
         }
+
+        private void FrmMDI_Load(object sender, EventArgs e)
+        {
+            //mostrar el usuario logueado
+
+            string InfoUsuario = string.Format("{0}-{1}({2})",
+                                                     Globales.MiUsuarioGlobal.UsuarioNombre,
+                                                     Globales.MiUsuarioGlobal.UsuarioCorreo,
+                                                     Globales.MiUsuarioGlobal.MiRolTipo.UsuarioRolDescripcion);
+            LblUsuario.Text = InfoUsuario;
+
+            switch (Globales.MiUsuarioGlobal.MiRolTipo.UsuarioRolID)
+            {
+                case 1:
+                    //seria admin, no se oculta nada
+                    break; 
+                case 2:
+                    //Seria usuario normal, se deben ocultar algunas opciones de menu
+                    gestionDeUsuariosToolStripMenuItem.Visible = false;
+                    rolesDeUsuarioToolStripMenuItem.Visible = false;
+                    tiposDeProveedorToolStripMenuItem.Visible = false;
+                    tiposDeProveedorToolStripMenuItem.Visible = false;
+                    break;
+            }
+
+
+        }
+
+        private void registroDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiFormRegistroCompra.Visible)
+            {
+                Globales.MiFormRegistroCompra = new FrmRegistroCompra();
+
+                Globales.MiFormRegistroCompra.Show();
+            }
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.LblRecuperarContrasennia = new System.Windows.Forms.LinkLabel();
             this.BtnVerContrasennia = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnIngresoDirecto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.label1.Location = new System.Drawing.Point(191, 347);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 25);
+            this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "CORREO ELECTRONICO";
             // 
@@ -61,7 +62,7 @@
             this.label2.Location = new System.Drawing.Point(239, 488);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 25);
+            this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "CONTRASEÑA";
             // 
@@ -70,7 +71,7 @@
             this.TxtEmail.Location = new System.Drawing.Point(76, 396);
             this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(491, 30);
+            this.TxtEmail.Size = new System.Drawing.Size(491, 26);
             this.TxtEmail.TabIndex = 2;
             // 
             // TxtContrasennia
@@ -78,7 +79,7 @@
             this.TxtContrasennia.Location = new System.Drawing.Point(76, 551);
             this.TxtContrasennia.Margin = new System.Windows.Forms.Padding(4);
             this.TxtContrasennia.Name = "TxtContrasennia";
-            this.TxtContrasennia.Size = new System.Drawing.Size(418, 30);
+            this.TxtContrasennia.Size = new System.Drawing.Size(418, 26);
             this.TxtContrasennia.TabIndex = 3;
             this.TxtContrasennia.UseSystemPasswordChar = true;
             // 
@@ -116,7 +117,7 @@
             this.LblRecuperarContrasennia.Location = new System.Drawing.Point(358, 585);
             this.LblRecuperarContrasennia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblRecuperarContrasennia.Name = "LblRecuperarContrasennia";
-            this.LblRecuperarContrasennia.Size = new System.Drawing.Size(209, 25);
+            this.LblRecuperarContrasennia.Size = new System.Drawing.Size(171, 20);
             this.LblRecuperarContrasennia.TabIndex = 7;
             this.LblRecuperarContrasennia.TabStop = true;
             this.LblRecuperarContrasennia.Text = "Recuperar Contraseña";
@@ -145,12 +146,24 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // BtnIngresoDirecto
+            // 
+            this.BtnIngresoDirecto.Location = new System.Drawing.Point(117, 605);
+            this.BtnIngresoDirecto.Name = "BtnIngresoDirecto";
+            this.BtnIngresoDirecto.Size = new System.Drawing.Size(138, 34);
+            this.BtnIngresoDirecto.TabIndex = 9;
+            this.BtnIngresoDirecto.Text = "Ingreso Directo";
+            this.BtnIngresoDirecto.UseVisualStyleBackColor = true;
+            this.BtnIngresoDirecto.Visible = false;
+            this.BtnIngresoDirecto.Click += new System.EventHandler(this.BtnIngresoDirecto_Click);
+            // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(655, 724);
+            this.Controls.Add(this.BtnIngresoDirecto);
             this.Controls.Add(this.BtnVerContrasennia);
             this.Controls.Add(this.LblRecuperarContrasennia);
             this.Controls.Add(this.BtnCancelar);
@@ -162,10 +175,12 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,5 +198,6 @@
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.LinkLabel LblRecuperarContrasennia;
         private System.Windows.Forms.Button BtnVerContrasennia;
+        private System.Windows.Forms.Button BtnIngresoDirecto;
     }
 }

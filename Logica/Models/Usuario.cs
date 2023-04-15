@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace Logica.Models
 {
@@ -267,6 +268,42 @@ namespace Logica.Models
         {
             Usuario R = new Usuario();
 
+            Conexion MiCnn = new Conexion();
+
+            Crypto crypto = new Crypto();
+            string ContrasenniaEncriptada = crypto.Encrypt(pContrasennia);
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@usuario", pEmail));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@password", ContrasenniaEncriptada));
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ID", this.UsuarioID));
+
+            //necesito un datatable para capturar la info del usuario
+            DataTable dt = new DataTable();
+
+            dt = MiCnn.EjecutarSELECT("SPUsuarioValidarUsuario");
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+
+                //esta cosulta deberia tener solo un registro
+                //se crea un objeto de tipo datarow para capturar la info
+                //contenida en index 0 del dt (datatable)
+                DataRow dr = dt.Rows[0];
+
+                R.UsuarioID = Convert.ToInt32(dr["UsuarioID"]);
+                R.UsuarioNombre = Convert.ToString(dr["UsuarioNombre"]);
+                R.UsuarioCedula = Convert.ToString(dr["UsuarioCedula"]);
+                R.UsuarioCorreo = Convert.ToString(dr["UsuarioCorreo"]);
+                R.UsuarioTelefono = Convert.ToString(dr["UsuarioTelefono"]);
+                R.UsuarioDireccion = Convert.ToString(dr["UsuarioDireccion"]);
+
+                R.UsuarioContrasennia = string.Empty;
+
+                //Composiciones
+                R.MiRolTipo.UsuarioRolID = Convert.ToInt32(dr["UsuarioRolID"]);
+                R.MiRolTipo.UsuarioRolDescripcion = Convert.ToString(dr["UsuarioRolDescripcion"]);
+            }
 
             return R;
 
