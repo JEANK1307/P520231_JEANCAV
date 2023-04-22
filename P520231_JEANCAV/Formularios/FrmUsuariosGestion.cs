@@ -445,6 +445,62 @@ namespace P520231_JEANCAV.Formularios
             }
 
         }
+
+        private void TxtUsuarioNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e, true);
+        }
+
+        private void TxtUsuarioCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresNumeros(e, true);
+        }
+
+        private void TxtUsuarioTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtUsuarioTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e);
+        }
+
+        private void TxtUsuarioCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e, false, true);
+        }
+
+        private void TxtUsuarioContrasennia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e);
+        }
+
+        private void TxtUsuarioDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Validaciones.CaracteresTexto(e, true);
+        }
+
+        private void TxtUsuarioCorreo_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtUsuarioCorreo.Text.Trim()))
+            {
+                if (!Validaciones.ValidarEmail(TxtUsuarioCorreo.Text.Trim()))
+                {
+                    MessageBox.Show("El formato del correo electrónico es incorrecto", "Error de validación", MessageBoxButtons.OK);
+
+                    TxtUsuarioCorreo.Focus();
+                }
+            }
+        }
+
+        private void TxtUsuarioCorreo_Enter(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtUsuarioCorreo.Text.Trim()))
+            {
+                TxtUsuarioCorreo.SelectAll();
+            }
+        }
     }
 
 

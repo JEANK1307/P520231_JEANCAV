@@ -39,10 +39,7 @@
             this.TxtNotas = new System.Windows.Forms.TextBox();
             this.CboxTipoCompra = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.BtnProductoAgregar = new System.Windows.Forms.ToolStripButton();
-            this.BtnProductoEditar = new System.Windows.Forms.ToolStripButton();
-            this.BtnProductoEliminar = new System.Windows.Forms.ToolStripButton();
-            this.DGVLista = new System.Windows.Forms.DataGridView();
+            this.DgvLista = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtTotalCantidad = new System.Windows.Forms.TextBox();
@@ -54,10 +51,13 @@
             this.CProductoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPrecioVentaUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnProductoAgregar = new System.Windows.Forms.ToolStripButton();
+            this.BtnProductoEditar = new System.Windows.Forms.ToolStripButton();
+            this.BtnProductoEliminar = new System.Windows.Forms.ToolStripButton();
             this.CboxCompraTipo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +80,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.DGVLista);
+            this.groupBox2.Controls.Add(this.DgvLista);
             this.groupBox2.Controls.Add(this.toolStrip1);
             this.groupBox2.Location = new System.Drawing.Point(34, 180);
             this.groupBox2.Name = "groupBox2";
@@ -103,6 +103,7 @@
             // 
             this.TxtProveedorNombre.Location = new System.Drawing.Point(79, 22);
             this.TxtProveedorNombre.Name = "TxtProveedorNombre";
+            this.TxtProveedorNombre.ReadOnly = true;
             this.TxtProveedorNombre.Size = new System.Drawing.Size(348, 20);
             this.TxtProveedorNombre.TabIndex = 1;
             // 
@@ -114,6 +115,7 @@
             this.BtnProveedorBuscar.TabIndex = 2;
             this.BtnProveedorBuscar.Text = "Buscar...";
             this.BtnProveedorBuscar.UseVisualStyleBackColor = true;
+            this.BtnProveedorBuscar.Click += new System.EventHandler(this.BtnProveedorBuscar_Click);
             // 
             // label2
             // 
@@ -162,52 +164,25 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // BtnProductoAgregar
+            // DgvLista
             // 
-            this.BtnProductoAgregar.BackColor = System.Drawing.Color.ForestGreen;
-            this.BtnProductoAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoAgregar.Image")));
-            this.BtnProductoAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnProductoAgregar.Name = "BtnProductoAgregar";
-            this.BtnProductoAgregar.Size = new System.Drawing.Size(121, 22);
-            this.BtnProductoAgregar.Text = "Agregar Producto";
-            // 
-            // BtnProductoEditar
-            // 
-            this.BtnProductoEditar.BackColor = System.Drawing.Color.PowderBlue;
-            this.BtnProductoEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEditar.Image")));
-            this.BtnProductoEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnProductoEditar.Name = "BtnProductoEditar";
-            this.BtnProductoEditar.Size = new System.Drawing.Size(130, 22);
-            this.BtnProductoEditar.Text = "Modificar Producto";
-            // 
-            // BtnProductoEliminar
-            // 
-            this.BtnProductoEliminar.BackColor = System.Drawing.Color.DarkMagenta;
-            this.BtnProductoEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEliminar.Image")));
-            this.BtnProductoEliminar.ImageTransparentColor = System.Drawing.Color.LightYellow;
-            this.BtnProductoEliminar.Name = "BtnProductoEliminar";
-            this.BtnProductoEliminar.Size = new System.Drawing.Size(122, 22);
-            this.BtnProductoEliminar.Text = "Eliminar Producto";
-            // 
-            // DGVLista
-            // 
-            this.DGVLista.AllowUserToAddRows = false;
-            this.DGVLista.AllowUserToDeleteRows = false;
-            this.DGVLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvLista.AllowUserToAddRows = false;
+            this.DgvLista.AllowUserToDeleteRows = false;
+            this.DgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CProductoID,
             this.CProductoCodigoBarras,
             this.CProductoNombre,
             this.CCantidad,
             this.CPrecioVentaUnitario});
-            this.DGVLista.Location = new System.Drawing.Point(6, 57);
-            this.DGVLista.Name = "DGVLista";
-            this.DGVLista.ReadOnly = true;
-            this.DGVLista.RowHeadersVisible = false;
-            this.DGVLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVLista.Size = new System.Drawing.Size(546, 132);
-            this.DGVLista.TabIndex = 1;
-            this.DGVLista.VirtualMode = true;
+            this.DgvLista.Location = new System.Drawing.Point(6, 57);
+            this.DgvLista.Name = "DgvLista";
+            this.DgvLista.ReadOnly = true;
+            this.DgvLista.RowHeadersVisible = false;
+            this.DgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvLista.Size = new System.Drawing.Size(546, 132);
+            this.DgvLista.TabIndex = 1;
+            this.DgvLista.VirtualMode = true;
             // 
             // groupBox1
             // 
@@ -321,6 +296,34 @@
             this.CPrecioVentaUnitario.Name = "CPrecioVentaUnitario";
             this.CPrecioVentaUnitario.ReadOnly = true;
             // 
+            // BtnProductoAgregar
+            // 
+            this.BtnProductoAgregar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnProductoAgregar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoAgregar.Image")));
+            this.BtnProductoAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnProductoAgregar.Name = "BtnProductoAgregar";
+            this.BtnProductoAgregar.Size = new System.Drawing.Size(121, 22);
+            this.BtnProductoAgregar.Text = "Agregar Producto";
+            this.BtnProductoAgregar.Click += new System.EventHandler(this.BtnProductoAgregar_Click);
+            // 
+            // BtnProductoEditar
+            // 
+            this.BtnProductoEditar.BackColor = System.Drawing.Color.PowderBlue;
+            this.BtnProductoEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEditar.Image")));
+            this.BtnProductoEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnProductoEditar.Name = "BtnProductoEditar";
+            this.BtnProductoEditar.Size = new System.Drawing.Size(130, 22);
+            this.BtnProductoEditar.Text = "Modificar Producto";
+            // 
+            // BtnProductoEliminar
+            // 
+            this.BtnProductoEliminar.BackColor = System.Drawing.Color.DarkMagenta;
+            this.BtnProductoEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnProductoEliminar.Image")));
+            this.BtnProductoEliminar.ImageTransparentColor = System.Drawing.Color.LightYellow;
+            this.BtnProductoEliminar.Name = "BtnProductoEliminar";
+            this.BtnProductoEliminar.Size = new System.Drawing.Size(122, 22);
+            this.BtnProductoEliminar.Text = "Eliminar Producto";
+            // 
             // FrmRegistroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +345,7 @@
             this.groupBox2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -362,7 +365,7 @@
         private System.Windows.Forms.ComboBox CboxTipoCompra;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton BtnProductoAgregar;
-        private System.Windows.Forms.DataGridView DGVLista;
+        private System.Windows.Forms.DataGridView DgvLista;
         private System.Windows.Forms.DataGridViewTextBoxColumn CProductoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CProductoCodigoBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn CProductoNombre;
