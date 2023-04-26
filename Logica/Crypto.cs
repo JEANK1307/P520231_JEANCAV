@@ -5,9 +5,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P520231_JEANCAV
+namespace Logica
 {
-    public class Cryto
+    public class Crypto
     {
         //Esta clase contiene los métodos necesarios para encriptar
         //no solo contraseñas sino cualquier dato importante

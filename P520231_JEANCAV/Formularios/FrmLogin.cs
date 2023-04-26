@@ -78,7 +78,7 @@ namespace P520231_JEANCAV.Formularios
         private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
         {
             //al presionar cierta combinacion de teclas el botos de ingreso directo aparece
-            if (e.Shift & e.Alt e.KeyCode == Keys.A)
+            if (e.Shift & e.Alt & e.KeyCode == Keys.A)
             {
                 //si presionamos shift + alt + a
                 BtnIngresoDirecto.Visible = true;

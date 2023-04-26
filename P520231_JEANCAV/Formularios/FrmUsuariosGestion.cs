@@ -52,13 +52,22 @@ namespace P520231_JEANCAV.Formularios
             //resetear la lista de Usuarios haciendo re instancia del objeto  
             ListaUsuarios = new DataTable();
 
+            //Si en el cuadro de texto de busqueda hay 3 o mas caracteres se filtra la lista
+            string FiltroBusqueda = "";
+
+            if (!string.IsNullOrEmpty(TxtBuscar.Text.Trim()) && TxtBuscar.Text.Count() >=3)
+            {
+                FiltroBusqueda = TxtBuscar.Text.Trim();
+            }
+
             if (CboxVerActivos.Checked)
             {
-                ListaUsuarios = MiUsuarioLocal.ListarActivos();
+
+                ListaUsuarios = MiUsuarioLocal.ListarActivos(FiltroBusqueda);
             }
             else
             {
-                ListaUsuarios = MiUsuarioLocal.ListarInactivos();
+                ListaUsuarios = MiUsuarioLocal.ListarInactivos(FiltroBusqueda); 
             }
 
             DgLista.DataSource = ListaUsuarios;
@@ -436,9 +445,20 @@ namespace P520231_JEANCAV.Formularios
                     }
                 }
                 else 
-                { 
-                
-                
+                {
+                   DialogResult r = MessageBox.Show("¿Está seguro de Activar el usuario?", "???",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (r == DialogResult.Yes)
+                    {
+                        if (MiUsuarioLocal.Activar())
+                        {
+                            MessageBox.Show("El usuario ha sido activado correctamente.", "!!!", MessageBoxButtons.OK);
+                            LimpiarFormulario();
+                            CargarListaDeUsuarios();
+                        }
+                    }
+
                 }
 
 
@@ -500,6 +520,26 @@ namespace P520231_JEANCAV.Formularios
             {
                 TxtUsuarioCorreo.SelectAll();
             }
+        }
+
+        private void CboxVerActivos_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarListaDeUsuarios();
+
+            if (CboxVerActivos.Checked)
+            {
+                BtnEliminar.Text = "ELIMINAR";
+            }
+            else
+            {
+                BtnEliminar.Text = "ACTIVAR";
+            }
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarListaDeUsuarios();
+
         }
     }
 

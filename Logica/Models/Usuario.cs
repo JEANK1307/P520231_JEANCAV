@@ -54,8 +54,10 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Correo", this.UsuarioCorreo));
 
-            //TODO: Encriptar la contraseña
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", this.UsuarioContrasennia));
+            //Encriptar la contraseña
+            Crypto MiEncriptador = new Crypto();
+            string ContrasenniaEnriptada = MiEncriptador.EncriptarEnUnSentido(this.UsuarioContrasennia);
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", ContrasenniaEnriptada));
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.UsuarioNombre));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Cedula", this.UsuarioCedula));
@@ -87,8 +89,11 @@ namespace Logica.Models
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Correo", this.UsuarioCorreo));
 
-            //TODO: Encriptar la contraseña
-            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", this.UsuarioContrasennia));
+            //Encriptar la contraseña
+            Crypto MiEncriptador = new Crypto();
+            string ContrasenniaEnriptada = MiEncriptador.EncriptarEnUnSentido(this.UsuarioContrasennia);
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@Contrasennia", ContrasenniaEnriptada));
+
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Nombre", this.UsuarioNombre));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@Cedula", this.UsuarioCedula));
@@ -130,6 +135,27 @@ namespace Logica.Models
 
             return R;
         }
+
+        public bool Activar() 
+        {
+            bool R = false;
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@ID", this.UsuarioID));
+
+            int respuesta = MiCnn.EjecutarInsertUpdateDelete("SPUsuarioActivar");
+
+            if (respuesta > 0)
+            {
+                R = true; 
+            }
+
+            return R;
+        
+        }
+
+
 
         public bool ConsultarPorID()
         {
@@ -238,7 +264,7 @@ namespace Logica.Models
         }
 
 
-        public DataTable ListarActivos()
+        public DataTable ListarActivos(string pFiltroBusqueda)
         {
             DataTable R = new DataTable();
 
@@ -248,6 +274,7 @@ namespace Logica.Models
             //En este caso como el SP tiene un parárametro, debemos por lo tanto
             //definir ese parárametro en la lista de parárametros del objeto de conexion
             MiCnn.ListaDeParametros.Add(new SqlParameter("@VerActivos", true));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
 
             R = MiCnn.EjecutarSELECT("SPUsuariosListar");
 
@@ -255,11 +282,19 @@ namespace Logica.Models
             return R;
         }
 
-        public DataTable ListarInactivos()
+        public DataTable ListarInactivos(string pFiltroBusqueda)
         {
             DataTable R = new DataTable();
 
+            Conexion MiCnn = new Conexion();
 
+
+            //En este caso como el SP tiene un parárametro, debemos por lo tanto
+            //definir ese parárametro en la lista de parárametros del objeto de conexion
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@VerActivos", false));
+            MiCnn.ListaDeParametros.Add(new SqlParameter("@FiltroBusqueda", pFiltroBusqueda));
+
+            R = MiCnn.EjecutarSELECT("SPUsuariosListar");
 
             return R;
         }
@@ -271,7 +306,7 @@ namespace Logica.Models
             Conexion MiCnn = new Conexion();
 
             Crypto crypto = new Crypto();
-            string ContrasenniaEncriptada = crypto.Encrypt(pContrasennia);
+            string ContrasenniaEncriptada = crypto.EncriptarEnUnSentido(pContrasennia);
 
             MiCnn.ListaDeParametros.Add(new SqlParameter("@usuario", pEmail));
             MiCnn.ListaDeParametros.Add(new SqlParameter("@password", ContrasenniaEncriptada));
@@ -281,7 +316,7 @@ namespace Logica.Models
             //necesito un datatable para capturar la info del usuario
             DataTable dt = new DataTable();
 
-            dt = MiCnn.EjecutarSELECT("SPUsuarioValidarUsuario");
+            dt = MiCnn.EjecutarSELECT("SPUsuarioValidarIngreso");
 
             if (dt != null && dt.Rows.Count > 0)
             {

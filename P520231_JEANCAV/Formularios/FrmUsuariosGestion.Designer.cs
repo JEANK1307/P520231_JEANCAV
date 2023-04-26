@@ -82,6 +82,7 @@
             this.TxtBuscar.Size = new System.Drawing.Size(390, 26);
             this.TxtBuscar.TabIndex = 1;
             this.TxtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // CboxVerActivos
             // 
@@ -94,6 +95,7 @@
             this.CboxVerActivos.TabIndex = 2;
             this.CboxVerActivos.Text = "Ver Usuarios Activos";
             this.CboxVerActivos.UseVisualStyleBackColor = true;
+            this.CboxVerActivos.CheckedChanged += new System.EventHandler(this.CboxVerActivos_CheckedChanged);
             // 
             // DgLista
             // 

@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cryto.cs" />
     <Compile Include="Formularios\FrmCompraAgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
