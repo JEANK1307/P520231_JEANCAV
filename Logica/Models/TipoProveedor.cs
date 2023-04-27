@@ -9,7 +9,7 @@ namespace Logica.Models
 {
     public class TipoProveedor
     {
-        public int ProveedorTipo { get; set; }
+        public int ProveedorTipoID { get; set; }
 
         public string ProveedorTipoDescripcion { get; set;}
 
@@ -18,8 +18,10 @@ namespace Logica.Models
         {
             DataTable R = new DataTable();
 
-            //acá va el codigo funcional que carga la lista de categoría
 
+            Services.Conexion MiCnn = new Services.Conexion();
+
+            R = MiCnn.EjecutarSELECT("SPProveedorTipoListar");
 
             return R;
         }

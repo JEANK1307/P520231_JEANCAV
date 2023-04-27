@@ -23,6 +23,8 @@ namespace P520231_JEANCAV
 
         public static Formularios.FrmRegistroCompra MiFormRegistroCompra = new Formularios.FrmRegistroCompra();
 
+        public static Formularios.FrmProveedoresGestion MiFormProveedorGestion = new Formularios.FrmProveedoresGestion();
+
 
     }
 }

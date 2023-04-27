@@ -78,5 +78,16 @@ namespace P520231_JEANCAV.Formularios
                 Globales.MiFormRegistroCompra.Show();
             }
         }
+
+        private void gesrtionDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Globales.MiFormProveedorGestion.Visible)
+            {
+                Globales.MiFormProveedorGestion = new FrmProveedoresGestion();
+
+                Globales.MiFormProveedorGestion.Show();
+            }
+           
+        }
     }
 }

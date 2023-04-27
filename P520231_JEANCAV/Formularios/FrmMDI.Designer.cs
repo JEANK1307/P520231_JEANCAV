@@ -93,14 +93,14 @@
             // gestionDeUsuariosToolStripMenuItem
             // 
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
             this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gesrtionDeUsuariosToolStripMenuItem_Click);
             // 
             // gesrtionDeProductosToolStripMenuItem
             // 
             this.gesrtionDeProductosToolStripMenuItem.Name = "gesrtionDeProductosToolStripMenuItem";
-            this.gesrtionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.gesrtionDeProductosToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.gesrtionDeProductosToolStripMenuItem.Text = "Gesrtion de Productos ";
             // 
             // gesrtionDeProveedoresToolStripMenuItem
@@ -108,41 +108,42 @@
             this.gesrtionDeProveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator1});
             this.gesrtionDeProveedoresToolStripMenuItem.Name = "gesrtionDeProveedoresToolStripMenuItem";
-            this.gesrtionDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
-            this.gesrtionDeProveedoresToolStripMenuItem.Text = "Gesrtion de Proveedores";
+            this.gesrtionDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.gesrtionDeProveedoresToolStripMenuItem.Text = "Gestion de Proveedores";
+            this.gesrtionDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.gesrtionDeProveedoresToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(57, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(248, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(242, 6);
             // 
             // categoríaProductosToolStripMenuItem
             // 
             this.categoríaProductosToolStripMenuItem.Name = "categoríaProductosToolStripMenuItem";
-            this.categoríaProductosToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.categoríaProductosToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.categoríaProductosToolStripMenuItem.Text = "Categoría Productos";
             // 
             // rolesDeUsuarioToolStripMenuItem
             // 
             this.rolesDeUsuarioToolStripMenuItem.Name = "rolesDeUsuarioToolStripMenuItem";
-            this.rolesDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.rolesDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.rolesDeUsuarioToolStripMenuItem.Text = "Roles de Usuario";
             // 
             // tiposDeProveedorToolStripMenuItem
             // 
             this.tiposDeProveedorToolStripMenuItem.Name = "tiposDeProveedorToolStripMenuItem";
-            this.tiposDeProveedorToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.tiposDeProveedorToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.tiposDeProveedorToolStripMenuItem.Text = "Tipos de Proveedor ";
             // 
             // tiposDeCompraToolStripMenuItem
             // 
             this.tiposDeCompraToolStripMenuItem.Name = "tiposDeCompraToolStripMenuItem";
-            this.tiposDeCompraToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
+            this.tiposDeCompraToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
             this.tiposDeCompraToolStripMenuItem.Text = "Tipos de Compra";
             // 
             // MnuProcesos
